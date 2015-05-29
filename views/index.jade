@@ -1,0 +1,54 @@
+extends layout
+
+block content
+  h3 标签
+  blockquote jade中的标签名称会被解析成对应的Html，缩进代表嵌套，但是缩进的时候不能tab和spaces混用，只能用其中
+  #foo ID
+  .bar 类
+            
+  h3 标签文本
+  blockquote 在标签后+空格，然后添加文本
+  legend 标签文本
+  div kallen
+  legend 标签多文本格式一
+  div
+    | i am ios developer
+    | i am html5 developer
+  legend 标签多文本格式二
+  div.
+    i am ios developer
+    i am html5 developer
+  legend 嵌套
+  ul#books
+    li
+      a(href="#") book A
+    li
+      a(href="#") book A
+  
+  ul#books
+    li: a(href="#") book A
+    li: a(href="#") book A
+    
+  legend 注释
+  // single line comment
+  //- invisible single line comment
+  
+  // single line comment
+    h1 hello world
+  
+  legend 可重用的 jade 块 (Mixins)
+  mixin book(name,price)
+    li #{name} for #{price}
+    
+  ul#books
+    +book('book A',100.0)
+    +book('book B',200.0)
+    
+  legend 参考
+  ul
+    li: a(href="http://segmentfault.com/a/1190000000357534#articleHeader8") 参考1
+    li: a(href="http://naltatis.github.io/jade-syntax-docs/#basics")参考2
+    li: a(href="https://cnodejs.org/topic/5368adc5cf738dd6090060f2")参考3
+    li: a(href="http://segmentfault.com/a/1190000000357534")参考4
+  
+
